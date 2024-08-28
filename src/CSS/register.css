@@ -1,0 +1,71 @@
+/* registro.css */
+body {
+    font-family: Arial, sans-serif;
+    background-color: rgb(232, 235, 233);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.registro-container {
+    background-color: #fff;
+    padding: 20px 40px;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    width: 300px;
+    text-align: center;
+}
+
+h2 {
+    margin-bottom: 20px;
+    color: rgb(60, 60, 60);
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #555555;
+    text-align: left;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: rgb(48, 89, 79);
+    border: none;
+    color: rgb(232, 235, 233);
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #24683d;
+}
+
+.registro-container p {
+    margin-top: 20px;
+    color: #777777;
+}
+
+.registro-container a {
+    color: rgb(48, 89, 79);
+    text-decoration: none;
+}
+
+.registro-container a:hover {
+    text-decoration: underline;
+}

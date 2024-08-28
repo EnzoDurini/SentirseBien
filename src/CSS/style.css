@@ -1,0 +1,221 @@
+body{
+    background-color: rgb(232, 235, 233);
+    overflow-x: hidden;
+}
+
+h1{
+  padding-top: 5%;
+  color: rgb(60, 60, 60);
+}
+
+/* header */
+
+.colornuevo {
+  background-color: rgb(48, 89, 79);
+  }
+
+  .cabecera {
+    justify-content: flex-end;
+    background-color: transparent;
+    font-size: large;
+    color: rgb(232, 235, 233);
+  }
+
+  .botoncabecera {
+    border: solid white 3px;
+  }
+  
+  .he {
+    padding: 3px;
+    margin: 3px;
+  }
+  
+  .he:hover {
+    background-color: white;
+    color: black;
+  }
+  
+  .he2 {
+    border: solid white 1px;
+  }
+  
+  .bhn {
+    border: solid black 2px;
+  }
+
+.ff{
+    display: flex;
+    justify-content: center;
+}
+
+
+
+
+  /* footer */
+  .footerText {
+    text-decoration: none;
+    background-color: rgb(48, 89, 79);
+    color: rgb(232, 235, 233);
+    text-align: center;
+    transition: all 0.5s;
+  }
+  
+  .footerText:hover {
+    transform: scale(1.1);
+    color:rgb(232, 235, 233);
+  }
+  
+  footer {
+    margin-top: 20px;
+    background-color: rgb(48, 89, 79);
+    color: rgb(232, 235, 233);
+    text-align: center;
+  }
+  
+  .links {
+    font-size: 30px;
+    justify-content: center;
+  }
+  
+  .pp {
+    font-size: 20px;
+  }
+
+  .ppo {
+    font-size: 10px;
+  }
+
+  /* Services */
+
+  .servicesInd{
+    padding: 5%;
+    text-align: center;
+  }
+  .servicesInd h2{
+    color: rgb(60, 60, 60);
+  }
+
+  .servicesInd li{
+    color: rgb(48, 89, 79);
+    background-color: transparent;
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+/*About Us*/
+
+.aboutUs-p{
+  font-size: 25px;
+  color:#24683d;
+  padding: 5%;
+  text-align: center;
+
+}
+
+/* employedForm */
+body {
+            font-family: Arial, sans-serif;
+            background-color: #f1f1f1;
+            margin: 0;
+            padding: 0;
+        }
+
+        .form-container {
+            width: 100%;
+            max-width: 400px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="file"] {
+            width: calc(100% - 20px);
+            padding: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+        .empleo-h2 {
+          text-align: center;
+          color: #2b5444;
+      }
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background-color: #2b5444;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #24683d;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-container h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+  /* Noticias */
+
+  .carousel-container {
+    width: 50%;
+    margin: 0 auto;
+    overflow: hidden; 
+    border-radius: 10px;
+    position: relative;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.carousel {
+    display: flex;
+    transition: transform 0.4s ease-in-out;
+    width: 100%; 
+}
+
+.carousel img {
+    width: 100%; 
+    flex-shrink: 0; 
+    border-radius: 10px;
+}
+
+.carousel-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.carousel-buttons button {
+    padding: 10px 20px;
+    background-color: #2b5444;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.carousel-buttons button:hover {
+    background-color: #24683d;
+}
+
+.contenedor-carousel{
+  width: 50%;
+  height: 10%;
+    margin: 0 auto;
+    overflow: hidden; 
+    border-radius: 10px;
+    position: relative;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
