@@ -7,5 +7,6 @@ export const pool = createPool({
         user: 'u8qzi582zuyygfde',
         password: 'dqOUuQMxD7eohFZHPCZL',
         waitForConnections: true,
-       
+       connectionLimit: 5,
+       queueLimit: 0,
     });
