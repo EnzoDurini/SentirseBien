@@ -11,9 +11,10 @@ export default class UserManager {
         } catch (e) {
             console.error("Error al obtener los empleados:", e);
         }
-        console.log(result);
-        return result;
+        return result
     }
+    
+
 }
 
 
