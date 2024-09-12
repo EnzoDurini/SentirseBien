@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agendar Servicio</title>
+  <!--Style-->
+  <link rel="stylesheet" href="/CSS/turnos.css">
+</head>
+<body>
+  <h1>Agendar un Servicio</h1>
+  <form id="turnos">
+    <label for="fecha">Fecha:</label>
+    <input type="date" id="fecha" name="fecha" required><br><br>
+
+    <label for="hora">Hora:</label>
+    <input type="time" id="hora" name="hora" required><br><br>
+
+    <label for="servicio">Servicio:</label>
+    <select id="servicio" name="servicio" required>
+      <option value="belleza">Belleza</option>
+      <option value="masaje">Masaje</option>
+      <option value="corporales">Tratamientos Corporales</option>
+      <option value="faciales">Tratamientos Faciales</option>
+    </select><br><br>
+
+    <button type="submit"> Agendar Turno</button>
+  </form>
+  <script src="/JS/turnos.js"></script>
+</body>
+</html>

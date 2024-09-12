@@ -7,7 +7,7 @@ import employedFormRouter from "./routes/employedForm.router.js";
 import noticesRouter from "./routes/notices.router.js";
 import registerRouter from "./routes/register.router.js";
 import servicesRouter from "./routes/services.router.js";
-
+import turnosRouter from "./routes/turnos.router.js";
 
 const app = express();
 app.use(express.json());
@@ -27,6 +27,6 @@ app.use("/", employedFormRouter);
 app.use("/", noticesRouter);
 app.use("/", registerRouter);
 app.use("/", servicesRouter);
-
+app.use("/", turnosRouter);
 
 const httpserver = app.listen(8080, () => console.log("Listening on port 8080"));

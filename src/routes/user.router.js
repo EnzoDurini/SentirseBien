@@ -19,17 +19,13 @@ router.post('/login', async (req, res) => {
     const { username, password } = req.body;
 
     try {
-        // Buscar el usuario en la base de datos
-        const [rows] = await pool.query('SELECT * FROM empleados WHERE nombre = ?', [username]);
-
-        if (rows.length === 0) {
-            return res.json({ success: false, message: 'Usuario no encontrado' });
+        
+        const existingUser = await userManager.getUserByUser(username)
+        if(!existingUser){
+            res.status(401).send("Usuario no encontrado");
         }
-
-        const user = rows[0];
-
         // Comparar la contraseña proporcionada con la almacenada en la base de datos    
-        if (user.contraseña != password) {
+        if (existingUser.password != password) {
             return res.json({ success: false, message: 'Contraseña incorrecta' });
         }
         

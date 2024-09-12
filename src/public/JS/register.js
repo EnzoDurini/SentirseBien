@@ -1,26 +1,38 @@
-// registro.js (en el servidor)
-const express = require('express');
-const router = express.Router();
-const pool = require('../DB/connectionDB'); // Asegúrate de que este sea el archivo correcto donde configuras el pool
+document.getElementById('registroForm').addEventListener('submit',async(e)=>{e.preventDefault()
 
-router.post('/', async (req, res) => {
-    const { username, email, password } = req.body;
+    // Capturamos los valores del formulario
+    const nombre = document.getElementById('nombre').value;
+    const username = document.getElementById('username').value;
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
+    const confirmPassword = document.getElementById('confirmPassword').value;
+
+
+    if (password !== confirmPassword) {
+        alert('Las contraseñas no coinciden.');
+        return;
+    }
+    
 
     try {
-        const [existingUser] = await pool.query('SELECT * FROM users WHERE username = ? OR email = ?', [username, email]);
+        const response = await fetch('/register', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ username, email, password, nombre })
+        });
 
-        if (existingUser.length > 0) {
-            // Usuario o correo ya existe
-            res.status(409).json({ message: 'El usuario o el correo ya existen' });
+        const data = await response.json();
+
+        if (data.success) {
+            alert('Usuario registrado con éxito');
+            window.location.href = '/login';
         } else {
-            // Registrar nuevo usuario
-            await pool.query('INSERT INTO users (username, email, password) VALUES (?, ?, ?)', [username, email, password]);
-            res.status(201).json({ message: 'Usuario registrado con éxito' });
+            alert(data.message || 'Error al registrar el usuario');
         }
     } catch (error) {
-        console.error('Error en el registro:', error);
-        res.status(500).json({ message: 'Error interno del servidor' });
+        console.error('Error:', error);
+        alert('Hubo un problema al intentar registrar el usuario.');
     }
 });
-
-module.exports = router;
