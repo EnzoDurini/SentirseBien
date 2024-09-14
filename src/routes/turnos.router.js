@@ -12,19 +12,20 @@ router.get("/turnos",(req, res) => {  // Agregué `req` como primer parámetro
         res.status(500).send("Error interno del servidor");  // Agregué un mensaje de error
     }
 });
-/*app.post('/turnos', (req, res) => {
-    const { fecha, hora, servicio } = req.body;
+router.post('/turnos', (req, res) => {
+    const { fecha, hora, servicio, nombre } = req.body;
   
-    // Imprimir los datos recibidos en la consola
     console.log(`Fecha: ${fecha}`);
     console.log(`Hora: ${hora}`);
     console.log(`Servicio: ${servicio}`);
+    console.log(`Nombre: ${nombre}`);
+    
   
-    // Responder con JSON
+
     res.json({
       success: true,
       message: 'Turno solicitado exitosamente'
     });
-  });*/
+  });
 
 export default router;

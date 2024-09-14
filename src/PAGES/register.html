@@ -8,6 +8,45 @@
     <link rel="stylesheet" href="/CSS/register.css"> <!-- Asegúrate de crear este archivo CSS -->
 </head>
 <body>
+    <header class="container-fluid colornuevo">
+        <nav class="navbar navbar-expand-lg transparent">
+            <div class="container-fluid">
+                <a href="./index"><img src="../ASSETS/logo header.jpg" alt="" class="bhn"></a>
+                <button class="navbar-toggler botoncabecera" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse cabecera" id="navbarNavDropdown">
+                    <ul class="navbar-nav cabecera">
+                        <li class="nav-item">
+                            <a class="nav-link cabecera he"  href="./index">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link cabecera he" href="./services">Servicios</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link cabecera he" href="./aboutUs">Quienes Somos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link cabecera he" href="./notices">Noticias</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link cabecera he" href="./employedForm">Empleo</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link cabecera he he2" href="./login">Inicia Sesión</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link cabecera he" href="./turnos">Turnos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link cabecera he" href="./turnosCargados">Turnos Agendados</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
     <div class="registro-container">
         <h2>Crear Cuenta</h2>
         <form id="registroForm">
@@ -30,6 +69,32 @@
         </form>
         <p>¿Ya tienes cuenta? <a href="login">Inicia sesión</a></p>
     </div>
+
+     <!-- footer -->
+  <footer class="container-fluid">
+    <div class="row">
+      <div class="col-lg-9 container-fluid">
+        <div class="row">
+          <h2 class="col-lg-3 mt-1">Contacto</h2>
+          <a class="col-lg-3 col-md-4 col-sm-12 footerText links" href="https://api.whatsapp.com/ target="
+            target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+          <a class="col-lg-3 col-md-4 col-sm-12 footerText links" href="https://www.instagram.com/" target="_blank"><i
+              class="fa-brands fa-instagram"></i></a>
+          <a class="col-lg-3 col-md-4 col-sm-12 footerText links" href="#" target="_blank"><i
+              class="fa-regular fa-envelope"></i></a>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-12 col-sm-12 mt-1 container-fluid">
+        <div class="row">
+          <a class="footerText pp col-md-12 col-sm-12 col-lg-12" href="#">Politicas de Privacidad</a>
+          <a class="footerText ppo col-md-12 col-sm-12 col-lg-12"
+            href="https://miro.com/app/settings/team/3458764596483398883/profile" target="_blank">Developed by Pablinka
+            Team</a>
+        </div>
+      </div>
+    </div>
+  </footer>
 
     <script src="/JS/register.js"></script>
 </body>

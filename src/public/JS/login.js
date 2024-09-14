@@ -3,6 +3,7 @@ document.getElementById('loginForm').addEventListener('submit', async (e) => {
 
     const username = document.getElementById('username').value;
     const password = document.getElementById('password').value;
+    
 
     try {
         const response = await fetch('/login', {
@@ -11,15 +12,21 @@ document.getElementById('loginForm').addEventListener('submit', async (e) => {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify({ username, password })
+            
         });
 
         const data = await response.json();
 
         if (data.success) {
             // Redirecciona o muestra un mensaje de éxito
-            window.location.href = '/index';
+            // if (employed === 1) {
+            //     window.location.href = '/turnosCargados';
+            // }else{
+            //     window.location.href = '/turnos';
+            // }
+            alert('Inicio de Sesión exitoso');
+            window.location.href = '/turnos';
         } else {
-            // Muestra un mensaje de error
             alert(data.message);
         }
     } catch (error) {

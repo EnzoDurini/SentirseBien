@@ -3,6 +3,8 @@ import UserManager from "../manager/userManager.js";
 import { __dirname } from "../utils.js";
 import { pool } from "../DB/poolConfig.js";
 
+
+
 const router = Router();
 const userManager = new UserManager();
 
@@ -30,6 +32,7 @@ router.post('/login', async (req, res) => {
         }
         
          // Si todo es correcto, puedes establecer una sesión, token o simplemente redirigir
+         console.log(`${username} inicio sesion`);
         res.json({ success: true, message: 'Inicio de sesión exitoso'});
     } catch (error) {
         console.error('Error en la consulta:', error);

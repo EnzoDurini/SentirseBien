@@ -69,3 +69,81 @@ button:hover {
 .login-container a:hover {
     text-decoration: underline;
 }
+
+
+/* header */
+
+.colornuevo {
+    background-color: rgb(48, 89, 79);
+    }
+  
+    .cabecera {
+      justify-content: flex-end;
+      background-color: transparent;
+      font-size: large;
+      color: rgb(232, 235, 233);
+    }
+  
+    .botoncabecera {
+      border: solid white 3px;
+    }
+    
+    .he {
+      padding: 3px;
+      margin: 3px;
+    }
+    
+    .he:hover {
+      background-color: white;
+      color: black;
+    }
+    
+    .he2 {
+      border: solid white 1px;
+    }
+    
+    .bhn {
+      border: solid black 2px;
+    }
+  
+  .ff{
+      display: flex;
+      justify-content: center;
+  }
+  
+  
+  
+  
+    /* footer */
+    .footerText {
+      text-decoration: none;
+      background-color: rgb(48, 89, 79);
+      color: rgb(232, 235, 233);
+      text-align: center;
+      transition: all 0.5s;
+    }
+    
+    .footerText:hover {
+      transform: scale(1.1);
+      color:rgb(232, 235, 233);
+    }
+    
+    footer {
+      margin-top: 20px;
+      background-color: rgb(48, 89, 79);
+      color: rgb(232, 235, 233);
+      text-align: center;
+    }
+    
+    .links {
+      font-size: 30px;
+      justify-content: center;
+    }
+    
+    .pp {
+      font-size: 20px;
+    }
+  
+    .ppo {
+      font-size: 10px;
+    }

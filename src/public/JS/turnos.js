@@ -4,7 +4,8 @@ document.getElementById('turnos').addEventListener('submit', async (e) => {
     const fecha = document.getElementById('fecha').value;
     const hora = document.getElementById('hora').value;
     const servicio = document.getElementById('servicio').value;
-    console.log(fecha,hora,servicio)
+    const nombre = document.getElementById('nombre').value
+
     
     
     try {
@@ -13,7 +14,7 @@ document.getElementById('turnos').addEventListener('submit', async (e) => {
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify({ fecha,hora,servicio })
+            body: JSON.stringify({ fecha,hora,servicio,nombre })
         });
 
         const data = await response.json();
