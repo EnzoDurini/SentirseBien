@@ -1,7 +1,6 @@
 import { Router } from "express";
 import UserManager from "../manager/userManager.js";
 import { __dirname } from "../utils.js";
-import { pool } from "../DB/poolConfig.js";
 import jwt from "jsonwebtoken";
 import dotenv from "dotenv";
 

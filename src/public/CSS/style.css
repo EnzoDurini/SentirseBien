@@ -384,3 +384,21 @@ input[type="password"] {
 .registro-container a:hover {
   text-decoration: underline;
 }
+
+
+/*Login*/
+
+.botonlogin {
+  width: 100%;
+  padding: 10px;
+  background-color: rgb(48, 89, 79);
+  border: none;
+  color: rgb(232, 235, 233);
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.botonlogin:hover {
+  background-color: #24683d;
+}

@@ -9,7 +9,6 @@ import registerRouter from "./routes/register.router.js";
 import servicesRouter from "./routes/services.router.js";
 import turnosRouter from "./routes/turnos.router.js";
 import turnosCargadosRouter from "./routes/turnosCargados.router.js"
-import { pool } from "./DB/poolConfig.js";
 import  session from "express-session";
 import cookieParser from "cookie-parser";
 import dotenv from 'dotenv';
@@ -22,7 +21,7 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 dotenv.config({path: './.env'})
-
+app.use(cookieParser())
 
 app.use(express.static(__dirname + "/public"));
 //app.use(cookieParser());

@@ -41,20 +41,6 @@ input[type="password"] {
     box-sizing: border-box;
 }
 
-button {
-    width: 100%;
-    padding: 10px;
-    background-color: rgb(48, 89, 79);
-    border: none;
-    color: rgb(232, 235, 233);
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 16px;
-}
-
-button:hover {
-    background-color: #24683d;
-}
 
 .login-container p {
     margin-top: 20px;
