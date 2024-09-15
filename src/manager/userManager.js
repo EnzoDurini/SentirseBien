@@ -39,6 +39,8 @@ export default class UserManager {
             console.error("Error al agregar el usuario:", error);
         }
     }
+
+    
     
 
 }
