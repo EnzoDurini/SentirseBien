@@ -17,7 +17,7 @@ router.get("/", async (req, res) => {
         try {
             const decoded = await promisify(jwt.verify)(req.cookies.jwt, process.env.JWT_SECRETO)
             if(decoded.id){
-                return res.redirect("/index");
+                return res.redirect("/");
             }else{
                 return res.sendFile(__dirname + "/pages/login.html")
             }

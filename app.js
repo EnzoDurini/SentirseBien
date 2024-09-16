@@ -31,9 +31,9 @@ app.use(express.static(__dirname + "/public"));
 app.set('pages', __dirname + "/pages");
 
 // Uso del router
-app.get('/',indexRouter)
+app.use('/index',indexRouter)
 app.use("/login", userRouter);
-app.use("/index", indexRouter);
+app.use("/", indexRouter);
 app.use("/aboutUs", aboutUsRouter);
 app.use("/employedForm", employedFormRouter);
 app.use("/notices", noticesRouter);
