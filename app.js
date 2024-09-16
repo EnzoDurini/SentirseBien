@@ -1,14 +1,14 @@
 import express from "express";
-import { __dirname } from "./src/utils.js";
-import userRouter from "./src/routes/user.router.js";  
-import indexRouter from "./src/routes/index.router.js";
-import aboutUsRouter from "./src/routes/aboutUs.router.js";
-import employedFormRouter from "./src/routes/employedForm.router.js";
-import noticesRouter from "./src/routes/notices.router.js";
-import registerRouter from "./src/routes/register.router.js";
-import servicesRouter from "./src/routes/services.router.js";
-import turnosRouter from "./src/routes/turnos.router.js";
-import turnosCargadosRouter from "./src/routes/turnosCargados.router.js"
+import { __dirname } from "./utils.js";
+import userRouter from ".//routes/user.router.js";  
+import indexRouter from "./routes/index.router.js";
+import aboutUsRouter from "./routes/aboutUs.router.js";
+import employedFormRouter from "./routes/employedForm.router.js";
+import noticesRouter from "./routes/notices.router.js";
+import registerRouter from "./routes/register.router.js";
+import servicesRouter from "./routes/services.router.js";
+import turnosRouter from "./routes/turnos.router.js";
+import turnosCargadosRouter from "./routes/turnosCargados.router.js"
 import  session from "express-session";
 import cookieParser from "cookie-parser";
 import dotenv from 'dotenv';
