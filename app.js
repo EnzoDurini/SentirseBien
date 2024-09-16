@@ -33,15 +33,6 @@ app.set('pages', __dirname + "/pages");
 app.get('/routes/*', (req, res) => {
     res.send('Route handler');
   });
-  
-  // Configurar la ruta raíz
-  app.get('/', (req, res) => {
-    res.redirect('/index');
-  });
-
-  app.get('/index', (req,res) =>{
-    res.sendFile(__dirname + "/pages/index.html");
-  })
 
 // Uso del router
 app.use('/index',indexRouter)
