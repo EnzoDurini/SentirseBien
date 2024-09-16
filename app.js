@@ -33,11 +33,11 @@ app.set('views', __dirname + "/views");
 
 // Uso del router
 app.use("/", userRouter);
-app.use("/", indexRouter);
-app.use("/", aboutUsRouter);
+app.use("/index", indexRouter);
+app.use("/aboutUs", aboutUsRouter);
 app.use("/", employedFormRouter);
-app.use("/", noticesRouter);
-app.use("/", registerRouter);
+app.use("/notices", noticesRouter);
+app.use("/register", registerRouter);
 app.use("/", servicesRouter);
 app.use("/", turnosRouter);
 app.use("/", turnosCargadosRouter);
