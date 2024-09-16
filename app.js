@@ -29,15 +29,14 @@ app.use(express.static(__dirname + "/public"));
 
 // Configuraciones de vistas
 app.set('pages', __dirname + "/pages");
-app.set('views', __dirname + "/views");
 
 // Uso del router
 app.use("/", userRouter);
-app.use("/index", indexRouter);
-app.use("/aboutUs", aboutUsRouter);
+app.use("/", indexRouter);
+app.use("/", aboutUsRouter);
 app.use("/", employedFormRouter);
-app.use("/notices", noticesRouter);
-app.use("/register", registerRouter);
+app.use("/", noticesRouter);
+app.use("/", registerRouter);
 app.use("/", servicesRouter);
 app.use("/", turnosRouter);
 app.use("/", turnosCargadosRouter);
