@@ -7,9 +7,17 @@
       }
     ],
     "routes": [
-            {
+      {
+        "src": "/public/(.*)",
+        "dest": "/public/$1"
+      },
+      {
+        "src": "/PAGES/(.*)",
+        "dest": "/PAGES/$1"
+      },
+      {
         "src": "/(.*)",
-        "dest": "/"
+        "dest": "/app.js"
       }
     ]
   }
