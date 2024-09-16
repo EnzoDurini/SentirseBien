@@ -3,6 +3,7 @@ import UserManager from "../manager/userManager.js";
 import { __dirname } from "../utils.js";
 import jwt from "jsonwebtoken";
 import dotenv from "dotenv";
+import {promisify} from "util";
 
 
 
@@ -11,13 +12,24 @@ const router = Router();
 const userManager = new UserManager();
 dotenv.config()
 
-router.get("/login", async (req, res) => {  // Agregué `req` como primer parámetro
-    try {
-        res.sendFile(__dirname + "/pages/login.html");  // Corregí la ruta a minúsculas
-    } catch (error) {
-        console.log("error");
-        res.status(500).send("Error interno del servidor");  // Agregué un mensaje de error
+router.get("/login", async (req, res) => {
+    if(req.cookies.jwt){
+        try {
+            const decoded = await promisify(jwt.verify)(req.cookies.jwt, process.env.JWT_SECRETO)
+            if(decoded.id){
+                return res.redirect("/index");
+            }else{
+                return res.sendFile(__dirname + "/pages/login.html")
+            }
+    
+        } catch (error) {
+            console.log("error");
+            res.status(500).send("Error interno del servidor"); 
+        }
+    }else{
+        res.sendFile(__dirname + "/pages/login.html");
     }
+    
 
 });
 
@@ -36,7 +48,7 @@ router.post('/login', async (req, res) => {
         }
         // Si todo es correcto, puedes establecer una sesión, token o simplemente redirigir
         else{
-            const id = existingUser.id
+            const id = existingUser.idusuario
             const token = jwt.sign({ id:id }, process.env.JWT_SECRETO, {expiresIn: process.env.JWT_TIEMPO_EXPIRACION})
             const cookieOptions = {
                 expires: new Date(Date.now() + process.env.JWT_COOKIE_EXPIRACION*24*60*60*1000),

@@ -50,9 +50,9 @@ export const isAuthenticated = async (req, res, next) => {
     if (req.cookies.jwt) {
         try {
             const decoded = await promisify(jwt.verify)(req.cookies.jwt, process.env.JWT_SECRETO);
+    
             const [rows] = await pool.query('SELECT * FROM usuarios WHERE idusuario = ?', [decoded.id])
-            
-                if (!rows) {
+                if (!rows || rows[0] === 0) {
                     return res.status(401).send("No tienes permiso de acceder");
                 }
                 req.user = rows[0];
@@ -66,3 +66,25 @@ export const isAuthenticated = async (req, res, next) => {
         return res.status(401).redirect('/login');
     }
 };
+
+export const isAdmin = async (req, res, next) => {
+    if (req.cookies.jwt) {
+        try {
+            const decoded = await promisify(jwt.verify)(req.cookies.jwt, process.env.JWT_SECRETO);
+            const [rows] = await pool.query('SELECT * FROM usuarios WHERE idusuario = ?', [decoded.id])
+            let user = rows[0];
+                if (user.rol != 1) {
+                    return res.status(401).redirect('/index');
+                }
+                req.user = rows[0];
+                return next();
+
+        } catch (error) {
+            console.log(error);
+            return res.status(401).send("Token inválido o expirado");
+        }
+    } else {
+        return res.status(401).redirect('/login');
+    }
+};
+

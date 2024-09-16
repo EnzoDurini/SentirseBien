@@ -4,8 +4,10 @@ document.getElementById('turnos').addEventListener('submit', async (e) => {
     const fecha = document.getElementById('fecha').value;
     const hora = document.getElementById('hora').value;
     const servicio = document.getElementById('servicio').value;
-    const nombre = document.getElementById('nombre').value
-
+    const profesional = document.getElementById('profesional').value;
+    const nombre = document.getElementById('nombre').value;
+    const fechayhora = `${fecha} ${hora}`;
+    console.log(fechayhora)
     
     
     try {
@@ -14,7 +16,7 @@ document.getElementById('turnos').addEventListener('submit', async (e) => {
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify({ fecha,hora,servicio,nombre })
+            body: JSON.stringify({ fechayhora,servicio, profesional, nombre})
         });
 
         const data = await response.json();

@@ -1,10 +1,12 @@
 import { Router } from "express";
 import { __dirname } from "../utils.js";
-
+import { isAuthenticated } from "../manager/userManager.js";
+import TurnosManager from "../manager/turnosManager.js"
 
 const router = Router();
+const turnosManager = new TurnosManager()
 
-router.get("/turnos",(req, res) => {  // Agregué `req` como primer parámetro
+router.get("/turnos",isAuthenticated,(req, res) => {  // Agregué `req` como primer parámetro
     try {
         res.sendFile(__dirname + "/pages/turnos.html");  // Corregí la ruta a minúsculas
     } catch (error) {
@@ -12,20 +14,24 @@ router.get("/turnos",(req, res) => {  // Agregué `req` como primer parámetro
         res.status(500).send("Error interno del servidor");  // Agregué un mensaje de error
     }
 });
-router.post('/turnos', (req, res) => {
-    const { fecha, hora, servicio, nombre } = req.body;
-  
-    console.log(`Fecha: ${fecha}`);
-    console.log(`Hora: ${hora}`);
-    console.log(`Servicio: ${servicio}`);
-    console.log(`Nombre: ${nombre}`);
-    
-  
+router.post('/turnos', async (req, res) => {
+    const { fechayhora, servicio, nombre, profesional } = req.body;
 
-    res.json({
-      success: true,
-      message: 'Turno solicitado exitosamente'
-    });
+    if(!nombre || !servicio || !fechayhora || !profesional){
+      return res.status(400).send('Faltan campos');
+    }
+    try {
+      const existingTurno = await turnosManager.getTurnosporFecha(fechayhora)
+      if(existingTurno)
+        { return res.status(400).json({success:false, message: "El turno ya está registrado"})}
+
+    await turnosManager.addTurno({nombre, fechayhora, servicio, profesional})
+    res.json({success:true, message: "Turno agregado con éxito"})
+    } catch (error) {
+      console.log("Error al intentar agregar turno", error)
+      res.status(500).send("Error interno del servidor")
+    }
+
   });
 
 export default router;
