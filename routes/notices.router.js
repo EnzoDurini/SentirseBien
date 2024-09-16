@@ -5,7 +5,7 @@ import ComentarioManager from "../manager/comentarioManager.js";
 const router = Router();
 const comentarioManager = new ComentarioManager();
 
-router.get("/notices", (req,res) =>{
+router.get("/", (req,res) =>{
     try {
         res.sendFile(__dirname + "/pages/notices.html");
     } catch (error) {
@@ -14,7 +14,7 @@ router.get("/notices", (req,res) =>{
     }
     });
     
-router.post('/notices', async(req,res)=>{
+router.post('/', async(req,res)=>{
     const { text } = req.body
     console.log(text)
     if (!text) {

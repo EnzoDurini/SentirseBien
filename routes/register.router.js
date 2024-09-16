@@ -6,7 +6,7 @@ import { __dirname } from "../utils.js";
 const router = Router();
 const userManager = new UserManager();
 
-router.get("/register",(req, res) => {  // Agregué `req` como primer parámetro
+router.get("/",(req, res) => {  // Agregué `req` como primer parámetro
     try {
         res.sendFile(__dirname + "/pages/register.html");  // Corregí la ruta a minúsculas
     } catch (error) {
@@ -15,7 +15,7 @@ router.get("/register",(req, res) => {  // Agregué `req` como primer parámetro
     }
 });
 
-router.post("/register", async (req,res) =>{
+router.post("/", async (req,res) =>{
     const {username, password, email, nombre} = req.body;
     if( !username || !password || !email){
         return res.status(400).json({success:false, message: "Completar todos los campos"})   

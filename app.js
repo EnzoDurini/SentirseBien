@@ -31,15 +31,16 @@ app.use(express.static(__dirname + "/public"));
 app.set('pages', __dirname + "/pages");
 
 // Uso del router
-app.use("/", userRouter);
-app.use("/", indexRouter);
-app.use("/", aboutUsRouter);
-app.use("/", employedFormRouter);
-app.use("/", noticesRouter);
-app.use("/", registerRouter);
-app.use("/", servicesRouter);
-app.use("/", turnosRouter);
-app.use("/", turnosCargadosRouter);
+app.get('/',indexRouter)
+app.use("/login", userRouter);
+app.use("/index", indexRouter);
+app.use("/aboutUs", aboutUsRouter);
+app.use("/employedForm", employedFormRouter);
+app.use("/notices", noticesRouter);
+app.use("/register", registerRouter);
+app.use("/services", servicesRouter);
+app.use("/turnos", turnosRouter);
+app.use("/turnosCargados", turnosCargadosRouter);
 
 //sesions
 
@@ -50,18 +51,16 @@ app.use(session({
     cookie: {maxAge: 1000*60*60*2}
 }));
 
-
-app.use(
-    helmet.contentSecurityPolicy({
+app.use(helmet({
+    contentSecurityPolicy: {
       directives: {
-        defaultSrc: ["'self'"], // Solo permitir recursos del propio dominio
-        fontSrc: ["'self'", 'https://sentirse-bien-delta.vercel.app'], // Permitir fuentes desde el dominio
-        imgSrc: ["'self'", 'data:', 'https://sentirse-bien-delta.vercel.app'], // Permitir imágenes desde el dominio y en formato base64
-        scriptSrc: ["'self'"], // Si tienes scripts externos, agrégalos aquí
-        styleSrc: ["'self'", "'unsafe-inline'"] // Para estilos CSS
+        defaultSrc: ["'self'"],
+        fontSrc: ["'self'", "data:"],
+        styleSrc: ["'self'", "https://fonts.googleapis.com"],
+        scriptSrc: ["'self'"],
       },
-    })
-  );
+    },
+  }));
 
 
 const PORT = process.env.PORT || 3000;

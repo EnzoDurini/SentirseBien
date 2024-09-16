@@ -4,7 +4,7 @@ import { __dirname } from "../utils.js";
 
 const router = Router();
 
-router.get("/services",(req, res) => {  // Agregué `req` como primer parámetro
+router.get("/",(req, res) => {  // Agregué `req` como primer parámetro
     try {
         res.sendFile(__dirname + "/pages/services.html");  // Corregí la ruta a minúsculas
     } catch (error) {

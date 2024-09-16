@@ -5,7 +5,7 @@ import TurnosManager from "../manager/turnosManager.js";
 const router = Router();
 const turnosManager = new TurnosManager();
 
-router.get("/turnosCargados",isAdmin,(req, res) => {  
+router.get("/",isAdmin,(req, res) => {  
     try {
         
         res.sendFile(__dirname + "/pages/turnosCargados.html");  
@@ -14,13 +14,13 @@ router.get("/turnosCargados",isAdmin,(req, res) => {
         res.status(500).send("Error interno del servidor");  
     }
 });
-router.get('/turnosCargados1', async (req, res) => {
+/*router.get('/', async (req, res) => {
     try {
         const turnos = await getTurnos(); // Función que obtiene turnos de la base de datos
         res.res.sendFile(__dirname + "/pages/turnosCargados1.html");
     } catch (error) {
         res.status(500).json({ message: "Error al obtener los turnos", error });
     }
-});
+});*/
 
 export default router;

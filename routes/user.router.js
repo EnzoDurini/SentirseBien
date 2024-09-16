@@ -12,7 +12,7 @@ const router = Router();
 const userManager = new UserManager();
 dotenv.config()
 
-router.get("/login", async (req, res) => {
+router.get("/", async (req, res) => {
     if(req.cookies.jwt){
         try {
             const decoded = await promisify(jwt.verify)(req.cookies.jwt, process.env.JWT_SECRETO)
@@ -33,7 +33,7 @@ router.get("/login", async (req, res) => {
 
 });
 
-router.post('/login', async (req, res) => {
+router.post('/', async (req, res) => {
     const { username, password } = req.body;
 
     try {

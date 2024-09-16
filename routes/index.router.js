@@ -6,7 +6,7 @@ import { isAdmin, isAuthenticated } from "../manager/userManager.js";
 
 const router = Router();
 
-router.get("/index", async (req, res) => {  // Agregué `req` como primer parámetro
+router.get("/", async (req, res) => {  // Agregué `req` como primer parámetro
     
     try {
         res.sendFile(__dirname + "/pages/index.html");  // Corregí la ruta a minúsculas
