@@ -39,6 +39,10 @@ app.get('/routes/*', (req, res) => {
     res.redirect('/index');
   });
 
+  app.get('/index', (req,res) =>{
+    res.sendFile(__dirname + "/pages/index.html");
+  })
+
 // Uso del router
 app.use('/index',indexRouter)
 app.use("/login", userRouter);

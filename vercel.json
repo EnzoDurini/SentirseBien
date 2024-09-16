@@ -20,7 +20,7 @@
         "dest": "/app.js"
       },
       { "src":"/routes/(.*)",
-        "dest": "/app.js"},
+        "dest": "/routes/$1"},
         {
             "src": "/manager/(.*)",
             "dest": "/app.js"
