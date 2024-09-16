@@ -17,7 +17,15 @@
       },
       {
         "src": "/(.*)",
-        "dest": "/"
-      }
+        "dest": "/app.js"
+      },
+      { "src":"/routes/(.*)",
+        "dest": "/route/$1"},
+        {
+            "src": "/manager/(.*)",
+            "dest": "/manager/$1"
+        },
+        { "src": "/DB/(.*)",
+            "dest":"/DB/$1"}
     ]
   }
