@@ -12,7 +12,7 @@ import turnosCargadosRouter from "./src/routes/turnosCargados.router.js"
 import  session from "express-session";
 import cookieParser from "cookie-parser";
 import dotenv from 'dotenv';
-import ComentarioManager from './src/manager/comentarioManager.js';
+import helmet from 'helmet'
 
 const app = express();
 
@@ -50,6 +50,19 @@ app.use(session({
     saveUninitialized: false,
     cookie: {maxAge: 1000*60*60*2}
 }));
+
+
+app.use(
+    helmet.contentSecurityPolicy({
+      directives: {
+        defaultSrc: ["'self'"], // Solo permitir recursos del propio dominio
+        fontSrc: ["'self'", 'https://sentirse-bien-delta.vercel.app'], // Permitir fuentes desde el dominio
+        imgSrc: ["'self'", 'data:', 'https://sentirse-bien-delta.vercel.app'], // Permitir imágenes desde el dominio y en formato base64
+        scriptSrc: ["'self'"], // Si tienes scripts externos, agrégalos aquí
+        styleSrc: ["'self'", "'unsafe-inline'"] // Para estilos CSS
+      },
+    })
+  );
 
 
 const PORT = process.env.PORT || 3000;
