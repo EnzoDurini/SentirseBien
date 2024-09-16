@@ -20,12 +20,12 @@
         "dest": "/app.js"
       },
       { "src":"/routes/(.*)",
-        "dest": "/routes/$1"},
+        "dest": "/app.js"},
         {
             "src": "/manager/(.*)",
-            "dest": "/manager/$1"
+            "dest": "/app.js"
         },
         { "src": "/DB/(.*)",
-            "dest":"/DB/$1"}
+            "dest":"/app.js"}
     ]
   }

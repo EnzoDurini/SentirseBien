@@ -30,6 +30,15 @@ app.use(express.static(__dirname + "/public"));
 // Configuraciones de vistas
 app.set('pages', __dirname + "/pages");
 
+app.get('/routes/*', (req, res) => {
+    res.send('Route handler');
+  });
+  
+  // Configurar la ruta raíz
+  app.get('/', (req, res) => {
+    res.send('Hello from Express on Vercel!');
+  });
+
 // Uso del router
 app.use('/index',indexRouter)
 app.use("/login", userRouter);
