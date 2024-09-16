@@ -52,4 +52,7 @@ app.use(session({
 }));
 
 
-const httpserver = app.listen(8080, () => console.log("Listening on port 8080"));
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+  console.log(`Servidor corriendo en el puerto ${PORT}`);
+});
