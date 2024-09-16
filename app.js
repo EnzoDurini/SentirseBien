@@ -36,7 +36,7 @@ app.get('/routes/*', (req, res) => {
   
   // Configurar la ruta raíz
   app.get('/', (req, res) => {
-    res.send('Hello from Express on Vercel!');
+    res.redirect('/index');
   });
 
 // Uso del router
