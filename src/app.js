@@ -12,7 +12,7 @@ import turnosCargadosRouter from "./routes/turnosCargados.router.js"
 import  session from "express-session";
 import cookieParser from "cookie-parser";
 import dotenv from 'dotenv';
-
+import ComentarioManager from './manager/comentarioManager.js';
 
 const app = express();
 

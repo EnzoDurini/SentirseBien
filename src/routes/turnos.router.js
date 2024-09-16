@@ -6,9 +6,9 @@ import TurnosManager from "../manager/turnosManager.js"
 const router = Router();
 const turnosManager = new TurnosManager()
 
-router.get("/turnos",isAuthenticated,(req, res) => {  // Agregué `req` como primer parámetro
+router.get("/turnos",isAuthenticated, async (req, res) => {  // Agregué `req` como primer parámetro
     try {
-        res.sendFile(__dirname + "/pages/turnos.html");  // Corregí la ruta a minúsculas
+        await res.sendFile(__dirname + "/pages/turnos.html");  // Corregí la ruta a minúsculas
     } catch (error) {
         console.log("error");
         res.status(500).send("Error interno del servidor");  // Agregué un mensaje de error

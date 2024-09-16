@@ -20,7 +20,7 @@ document.getElementById('turnos').addEventListener('submit', async (e) => {
         });
 
         const data = await response.json();
-        console.log(data)
+        
         if (data.success) {
             window.location.href = '/index';
         } else {

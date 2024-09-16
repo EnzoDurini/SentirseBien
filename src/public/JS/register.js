@@ -13,6 +13,7 @@ document.getElementById('registroForm').addEventListener('submit',async(e)=>{e.p
         return;
     }
     
+    
 
     try {
         const response = await fetch('/register', {
